@@ -1,0 +1,92 @@
+.logo {
+    -fx-background-color: #a42323;
+    -fx-background-radius: 15px;
+    -fx-border-color: #b11597;
+    -fx-border-radius: 80px;
+    -fx-border-width: 10px;
+    -fx-padding: 8px 10px;
+}
+
+.Panel_Div1 {
+    -fx-background-color: #cdeae8;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+.Panel_Div2 {
+    -fx-background-color: #e0dddda8;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+.Panel_Div3 {
+    /* linear-gradient(to dirección, color_inicial, color_final) */
+    -fx-background-color: linear-gradient(to right, #31b8ee, #80c8e4);
+    -fx-background-radius: 2px; /* Para redondear el fondo junto con el borde */
+    -fx-padding: 5px;
+    -fx-border-radius: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+/* 1. Panel de fondo general (Sustituye a Panel_Div4) */
+.Panel_Div4 {
+    -fx-background-color: #f8fafc; /* Gris claro neutro y limpio */
+    -fx-background-radius: 6px;
+    -fx-border-color: #cbd5e1;      /* Borde suave */
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px;
+}
+
+/* 2. Marco destacado de sección / Título (Sustituye al panel rojo/rosa de ejemplo) */
+.panel_Ejemplo_Marco {
+    -fx-background-color: #0284c7; /* Azul profundo profesional */
+    -fx-background-radius: 6px 6px 0px 0px; /* Redondeado solo arriba */
+    -fx-border-color: #0369a1;
+    -fx-border-radius: 6px 6px 0px 0px;
+    -fx-padding: 6px 12px;
+}
+
+/* 3. Botones Secundarios (VENTA, INVENTARIO, CORTE, ENTER) */
+.Butons {
+    -fx-background-color: #0ea5e9; /* Azul cian moderno */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #0284c7;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+
+.Butons:hover {
+    -fx-background-color: #0284c7;
+    -fx-scale-x: 1.04; /* Reducido a 4% para un efecto sutil sin pixelar texto */
+    -fx-scale-y: 1.04;
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.3), 8, 0, 0, 2);
+}
+
+/* 4. Botón de Acción Principal (COBRAR) */
+.Butons_Cobrar {
+    -fx-background-color: #10b981; /* Verde esmeralda (dinero/éxito) */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-padding: 8px 18px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #059669;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1.5px;
+    -fx-cursor: hand;
+}
+
+.Butons_Cobrar:hover {
+    -fx-background-color: #34d399;
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.4), 10, 0, 0, 2);
+}

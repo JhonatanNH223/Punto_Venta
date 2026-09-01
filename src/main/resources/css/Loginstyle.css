@@ -1,0 +1,54 @@
+/* 1. Panel de fondo con degradado elegante (Azul Profundo a Cian) */
+.decoracion_panel {
+    -fx-background-color: linear-gradient(to bottom right, #0284c7, #0369a1);
+    -fx-background-radius: 12px;
+    -fx-padding: 25px;
+}
+
+/* 2. Campos de Texto (Username & Password) */
+.campo-texto {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 6px;
+    -fx-border-color: #cbd5e1;      /* Borde gris neutro */
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+}
+
+/* Foco de escritura: Azul Cian vibrante en lugar de rojo */
+.campo-texto:focused {
+    -fx-border-color: #38bdf8;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.3), 6, 0, 0, 0);
+}
+
+/* 3. Botón de Inicio de Sesión (Verde Esmeralda) */
+.boton-login {
+    -fx-background-color: #10b981;  /* Verde de éxito/acceso */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #059669;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 20px;
+}
+
+/* Hover: Zoom sutil con sombra luminosa */
+.boton-login:hover {
+    -fx-background-color: #34d399;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.4), 10, 0, 0, 2);
+}
+
+/* Clic (Pressed) */
+.boton-login:pressed {
+    -fx-background-color: #059669;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}

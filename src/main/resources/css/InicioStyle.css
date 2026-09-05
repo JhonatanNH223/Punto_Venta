@@ -8,15 +8,16 @@
 }
 
 .Panel_Div1 {
-    -fx-background-color: #cdeae8;
-    -fx-padding: 5px;
+    -fx-background-color: linear-gradient(to right, #31b8ee, #80c8e4);
+    -fx-background-radius: 2px;
+    -fx-padding: 2px;
     -fx-border-radius: 5px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
 }
 
 .Panel_Div2 {
     -fx-background-color: #e0dddda8;
-    -fx-padding: 10px;
+    -fx-padding: 5px;
     -fx-border-radius: 5px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
 }
@@ -37,7 +38,7 @@
     -fx-border-color: #cbd5e1;      /* Borde suave */
     -fx-border-radius: 6px;
     -fx-border-width: 1px;
-    -fx-padding: 8px;
+    -fx-padding: 1px;
 }
 
 /* 2. Marco destacado de sección / Título (Sustituye al panel rojo/rosa de ejemplo) */
@@ -46,7 +47,7 @@
     -fx-background-radius: 6px 6px 0px 0px; /* Redondeado solo arriba */
     -fx-border-color: #0369a1;
     -fx-border-radius: 6px 6px 0px 0px;
-    -fx-padding: 6px 12px;
+    /* -fx-padding: 6px 12px; */
 }
 
 /* 3. Botones Secundarios (VENTA, INVENTARIO, CORTE, ENTER) */
@@ -55,7 +56,7 @@
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
     -fx-font-size: 13px;
-    -fx-padding: 6px 14px;
+    -fx-padding: 4px 14px;
     -fx-background-radius: 6px;
     -fx-border-color: #0284c7;
     -fx-border-radius: 6px;
@@ -68,6 +69,19 @@
     -fx-scale-x: 1.04; /* Reducido a 4% para un efecto sutil sin pixelar texto */
     -fx-scale-y: 1.04;
     -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.3), 8, 0, 0, 2);
+}
+
+.BotonUser {
+    -fx-background-color: #0ea5e9; /* Azul cian moderno */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 14px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #0284c7;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
 }
 
 /* 4. Botón de Acción Principal (COBRAR) */
@@ -89,4 +103,62 @@
     -fx-scale-x: 1.04;
     -fx-scale-y: 1.04;
     -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.4), 10, 0, 0, 2);
+}
+
+
+
+
+
+
+
+
+/* Estilo general de la ventana modal */
+.dialog-pane {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #0284c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* Área del texto/encabezado del diálogo */
+.dialog-pane > .header-panel {
+    -fx-background-color: linear-gradient(to right, #0284c7, #0369a1);
+    -fx-background-radius: 6px 6px 0 0;
+    -fx-padding: 12px;
+}
+
+.dialog-pane > .header-panel .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Campo de entrada de texto */
+.dialog-pane .text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px 10px;
+    -fx-font-size: 13px;
+}
+
+.dialog-pane .text-field:focused {
+    -fx-border-color: #38bdf8;
+    -fx-border-width: 1.5px;
+}
+
+/* Botones del Modal (Aceptar / Cancelar) */
+.dialog-pane .button {
+    -fx-background-color: #0284c7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-padding: 6px 16px;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #0369a1;
 }

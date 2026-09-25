@@ -1,5 +1,6 @@
 package com.PV.Punto_Venta;
 
+import com.PV.Punto_Venta.service.LenguageService;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,18 @@ public class PuntoVentaApplication extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
+
+		// 1. Obtener el servicio de idiomas configurado por Spring
+		LenguageService languageService = springContext.getBean(LenguageService.class);
+
+		// 2. Pasar el ResourceBundle al FXMLLoader del Login
+		FXMLLoader fxmlLoader = new FXMLLoader(
+				getClass().getResource("/fxml/Login.fxml"),
+				languageService.getBundle() // <--- Esto carga "messages_es.properties" automáticamente
+		);
+
+
+		//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));
 
 		// 2. ¡EL PASO CLAVE! Le decimos a JavaFX que cree los controladores usando Spring
 		// Esto habilita @Autowired y la inyección de dependencias en tus controladores

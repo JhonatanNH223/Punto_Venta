@@ -1,5 +1,6 @@
 package com.PV.Punto_Venta.controller;
 
+import com.PV.Punto_Venta.service.LenguageService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,9 @@ public class LoginController {
 
     @Autowired
     private ApplicationContext springContext;
+
+    @Autowired
+    private LenguageService languageService;
 
     @FXML
     private PasswordField TfPassword;
@@ -56,7 +60,11 @@ public class LoginController {
 
     private void abrirPantallaInicio(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/INICIO.fxml"));
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/fxml/INICIO.fxml"),
+                    languageService.getBundle()
+            );
+
             loader.setControllerFactory(springContext::getBean);
 
             Parent root = loader.load();

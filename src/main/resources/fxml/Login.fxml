@@ -15,12 +15,12 @@
          <children>
             <AnchorPane prefHeight="112.0" prefWidth="302.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="22.0" prefHeight="18.0" prefWidth="214.0" text="PUNTO DE VENTA" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="22.0" prefHeight="18.0" prefWidth="214.0" text="%login.title" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutY="64.0" text="LOGIN: INICIO DE SECION" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <Label alignment="CENTER" layoutY="64.0" text="%login.subtitle" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -33,7 +33,7 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="55.0" prefWidth="302.0" spacing="10.0">
                            <children>
-                              <Label text="USERNAME: " textFill="WHITE">
+                              <Label text="%login.username" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font></Label>
@@ -42,7 +42,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="55.0" prefWidth="302.0" spacing="10.0">
                            <children>
-                              <Label text="PASSWORD: " textFill="WHITE">
+                              <Label text="%login.password" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font></Label>
@@ -55,7 +55,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="56.0" prefWidth="302.0">
                <children>
-                  <Button fx:id="btnLogn" layoutX="34.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="26.0" prefWidth="211.0" styleClass="boton-login" text="LOGIN" AnchorPane.leftAnchor="34.0" />
+                  <Button fx:id="btnLogn" layoutX="34.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="26.0" prefWidth="211.0" styleClass="boton-login" text="%login.button" AnchorPane.leftAnchor="34.0" />
                </children>
             </AnchorPane>
          </children>

@@ -122,26 +122,19 @@ public class InicioController {
 
     @FXML
     public void initialize() {
-
         iniciarReloj();
-
-
+        if(TabPane.getTabs().isEmpty()) {CreateNewTiket();}
         CreatenewTiketF6();
-
-
-
 
     }
 
 
 
 
-
+    //--------------- Reloj/clock ---------------
     private void iniciarReloj() {
-        // Formato para la fecha y hora (Ejemplo: "04/09/2026 16:33:05" o "16:33:05")
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy       hh:mm a");
 
-        // Crear un ciclo que se ejecute cada 1 segundo
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LabelHour.setText(LocalDateTime.now().format(formatter));
         }), new KeyFrame(Duration.seconds(1)));
@@ -149,9 +142,13 @@ public class InicioController {
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
     }
+    //-------------------------------------------
 
+
+    //--------------- Ventana/Tab ---------------
     @FXML
     public void CreateNewTab(ActionEvent event){
+        ModalNewTicketName();
         CreateNewTiket();
     }
 
@@ -159,17 +156,25 @@ public class InicioController {
         Platform.runLater(() -> {
             TabPane.getScene().setOnKeyPressed(event -> {
                 if (event.getCode() == KeyCode.F6) {
+                    ModalNewTicketName();
                     CreateNewTiket();
                 }
             });
         });
     }
 
-
-
     public void CreateNewTiket(){
+        Tab newTab = new Tab("Ticket "+ (TabPane.getTabs().size() + 1));
+        newTab.setClosable(false);
+        TableView<Object> tableView = createTableView();
 
-        String defaultName = "Ticket " + (TabPane.getTabs().size() + 1);
+        newTab.setContent(tableView);
+        TabPane.getTabs().add(newTab);
+        TabPane.getSelectionModel().select(newTab);
+    }
+
+    public void ModalNewTicketName(){
+        String defaultName = TabPane.getSelectionModel().getSelectedItem().getText();
 
         TextInputDialog dialog = new TextInputDialog(defaultName);
         dialog.setTitle("Nuevo Ticket");
@@ -182,7 +187,6 @@ public class InicioController {
         String cssPath = getClass().getResource("/css/InicioStyle.css").toExternalForm();
         dialog.getDialogPane().getStylesheets().add(cssPath);
 
-        // 3. Mostrar el modal
         Optional<String> result = dialog.showAndWait();
 
         String ticketName = defaultName;
@@ -190,14 +194,7 @@ public class InicioController {
             ticketName = result.get().trim();
         }
 
-        Tab newTab = new Tab(ticketName);
-        newTab.setClosable(false);
-        TableView<Object> tableView = createTableView();
-
-        newTab.setContent(tableView);
-        TabPane.getTabs().add(newTab);
-        TabPane.getSelectionModel().select(newTab);
-
+        TabPane.getSelectionModel().getSelectedItem().setText(ticketName);
     }
 
     private TableView<Object> createTableView(){
@@ -228,5 +225,7 @@ public class InicioController {
         tableView.setItems(FXCollections.observableArrayList());
         return tableView;
     }
+
+    //--------------------------------------------
 
 }

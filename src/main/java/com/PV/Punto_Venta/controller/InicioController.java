@@ -148,16 +148,26 @@ public class InicioController {
     //--------------- Ventana/Tab ---------------
     @FXML
     public void CreateNewTab(ActionEvent event){
-        ModalNewTicketName();
-        CreateNewTiket();
+        if(TabPane.getTabs().isEmpty()) {
+            CreateNewTiket();
+            ModalNewTicketName();
+        }else{
+            ModalNewTicketName();
+            CreateNewTiket();
+        }
     }
 
     public void CreatenewTiketF6(){
         Platform.runLater(() -> {
             TabPane.getScene().setOnKeyPressed(event -> {
                 if (event.getCode() == KeyCode.F6) {
-                    ModalNewTicketName();
-                    CreateNewTiket();
+                    if(TabPane.getTabs().isEmpty()) {
+                        CreateNewTiket();
+                        ModalNewTicketName();
+                    }else{
+                        ModalNewTicketName();
+                        CreateNewTiket();
+                    }
                 }
             });
         });
@@ -226,6 +236,10 @@ public class InicioController {
         return tableView;
     }
 
+    @FXML
+    public void DelateTab(ActionEvent event){
+        TabPane.getTabs().remove(TabPane.getSelectionModel().getSelectedIndex());
+    }
     //--------------------------------------------
 
 }

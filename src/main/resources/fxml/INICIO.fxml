@@ -183,7 +183,7 @@
                                                    <children>
                                                       <Button fx:id="btnChange" mnemonicParsing="false" styleClass="Butons" stylesheets="@../css/InicioStyle.css" text="F5 CAMBIAR" />
                                                       <Button fx:id="btnPending" mnemonicParsing="false" onAction="#CreateNewTab" styleClass="Butons" stylesheets="@../css/InicioStyle.css" text="F6 PENDIENTE" />
-                                                      <Button fx:id="btnDelateTiket" mnemonicParsing="false" styleClass="Butons" stylesheets="@../css/InicioStyle.css" text="ELIMINAR" />
+                                                      <Button fx:id="btnDelateTiket" mnemonicParsing="false" onAction="#DelateTab" styleClass="Butons" stylesheets="@../css/InicioStyle.css" text="ELIMINAR" />
                                                    </children>
                                                 </HBox>
                                              </children>

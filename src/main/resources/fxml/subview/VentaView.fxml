@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox stylesheets="@../../css/InicioStyle.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.PV.Punto_Venta.controller.VentaController">
+    <children>
+        <!-- ENCABEZADO TICKET -->
+        <AnchorPane styleClass="Panel_Div3" stylesheets="@../../css/InicioStyle.css">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label text="VENTA DE PRODUCTOS -"><font><Font name="System Bold" size="14.0" /></font></Label>
+                        <Label fx:id="LabelNameTiket" text="Nombre Tiket"><font><Font name="System Bold" size="14.0" /></font></Label>
+                    </children>
+                    <padding><Insets bottom="5.0" left="10.0" top="5.0" /></padding>
+                </HBox>
+            </children>
+        </AnchorPane>
+
+        <!-- BÚSQUEDA PRODUCTO -->
+        <AnchorPane styleClass="Panel_Div2" stylesheets="@../../css/InicioStyle.css">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label text="Codigo del producto:"><font><Font name="System Bold" size="14.0" /></font></Label>
+                        <TextField fx:id="TextFieldCode" prefHeight="25.0" prefWidth="220.0" />
+                        <Button fx:id="btnAddProduct" mnemonicParsing="false" styleClass="Butons" text="ENTER - Agregar Producto" />
+                    </children>
+                    <padding><Insets bottom="5.0" left="10.0" top="5.0" /></padding>
+                </HBox>
+            </children>
+        </AnchorPane>
+
+        <Separator prefWidth="200.0" />
+
+        <!-- BOTONES DE ACCIÓN RÁPIDA -->
+        <AnchorPane prefHeight="43.0" styleClass="Panel_Div2" stylesheets="@../../css/InicioStyle.css">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="btnInsV" mnemonicParsing="false" styleClass="Butons" text="INS VARIOS" />
+                        <Button fx:id="btnArtCommon" mnemonicParsing="false" styleClass="Butons" text="CTROL+P ART COMÚN" />
+                        <Button fx:id="btnSearch" mnemonicParsing="false" styleClass="Butons" text="F10 BUSCAR" />
+                        <Button fx:id="btnDelateArt" mnemonicParsing="false" styleClass="Butons" text="DEL BORRAR ART," />
+                    </children>
+                    <padding><Insets bottom="5.0" left="10.0" top="5.0" /></padding>
+                </HBox>
+            </children>
+        </AnchorPane>
+
+        <!-- TABLA DE TICKETS -->
+        <AnchorPane prefHeight="400.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TabPane fx:id="TabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            </children>
+        </AnchorPane>
+
+        <!-- TOTALES Y COBRO -->
+        <AnchorPane prefHeight="82.0" styleClass="panel_Ejemplo_Marco" stylesheets="@../../css/InicioStyle.css">
+            <children>
+                <HBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                    <children>
+                        <AnchorPane styleClass="Panel_Div4" HBox.hgrow="ALWAYS">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="20.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="5.0">
+                                    <children>
+                                        <VBox alignment="CENTER_LEFT" spacing="15.0">
+                                            <children>
+                                                <HBox alignment="CENTER" spacing="5.0">
+                                                    <children>
+                                                        <Label fx:id="LabelTotalProducts" text="0"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                                        <Label text="PRODUCTOS EN LA VENTA ACTUAL"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                    <children>
+                                                        <Button fx:id="btnChange" mnemonicParsing="false" styleClass="Butons" text="F5 CAMBIAR" />
+                                                        <Button fx:id="btnPending" mnemonicParsing="false" onAction="#CreateNewTab" styleClass="Butons" text="F6 PENDIENTE" />
+                                                        <Button fx:id="btnDelateTiket" mnemonicParsing="false" onAction="#DelateTab" styleClass="Butons" text="ELIMINAR" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Button fx:id="btnCharge" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" styleClass="Butons_Cobrar" text="F12 COBRAR">
+                                            <font><Font name="System Bold" size="16.0" /></font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                        <Region prefWidth="90.0" />
+                        <AnchorPane prefWidth="330.0" styleClass="Panel_Div4">
+                            <children>
+                                <HBox alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label text="TOTAL: $"><font><Font name="System Bold Italic" size="30.0" /></font></Label>
+                                        <Label fx:id="LabelTotalSale" text="00.00"><font><Font name="System Bold Italic" size="30.0" /></font></Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                    <padding><Insets bottom="10.0" left="10.0" right="10.0" top="10.0" /></padding>
+                </HBox>
+            </children>
+        </AnchorPane>
+      <AnchorPane prefHeight="51.0" prefWidth="1100.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="1100.0" spacing="10.0" styleClass="Panel_Div4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button styleClass="Butons" text="IMPRIMIR ÚLTIMO TICKET" />
+                  <Button styleClass="Butons" text="REGISTRO DE VENTAS" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="50.0" top="50.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="50.0" />
+               </padding>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Separator prefHeight="6.0" prefWidth="1100.0" />
+    </children>
+</VBox>

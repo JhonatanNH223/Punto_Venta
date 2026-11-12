@@ -17,8 +17,6 @@ public class PuntoVentaApplication extends Application {
 
 	@Override
 	public void init() {
-		// 1. Inicializamos Spring Boot ANTES de mostrar la interfaz
-		// Usamos WebApplicationType.NONE si no es una app web REST
 		this.springContext = new SpringApplicationBuilder(PuntoVentaApplication.class).run();
 	}
 

@@ -7,13 +7,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "DetailedProcedure")
+@Table(name = "detailed_procedure")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
 public class DetailedProcedure {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_DetailedProcedure")
+    @Column(name = "id_detailed_procedure")
     private Long id;
 
     //Muchos Dettales pueden estar asociados a 1 Procedimiento
